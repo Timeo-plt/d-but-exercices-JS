@@ -23,6 +23,13 @@ function bjrUser(){
 function todolist(){
     const newTask = document.getElementById('taskInput').value;
     const li = document.createElement('li');
+    const supp = document.createElement('button');
+    supp.textContent = 'Supprimer';
     li.textContent = newTask;
+    li.appendChild(supp);
     document.getElementById('taskList').appendChild(li);
+    supp.addEventListener('click', () => {
+        li.remove();
+    });
+    document.getElementById('taskInput').value = '';
 }
